@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductData from './components/ProductData'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -10,11 +10,19 @@ const client = new ApolloClient({
 })
 
 const App = () => {
+  const [basket, setBasket] = useState()
+  const [quantityCount, setQuantityCount] = useState(1)
+
+  const addToBasket = (productId, quantity) => {}
+
   return (
     <ApolloProvider client={client}>
       <>
         <Header />
-        <ProductData />
+        <ProductData
+          quantityCount={quantityCount}
+          setQuantityCount={setQuantityCount}
+        />
         <Footer />
       </>
     </ApolloProvider>

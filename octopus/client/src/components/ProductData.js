@@ -24,9 +24,9 @@ const QUERY_PRODUCTS = gql`
   }
 `
 
-const ProductData = () => {
+const ProductData = ({ quantityCount, setQuantityCount }) => {
   const { data, loading, error } = useQuery(QUERY_PRODUCTS)
-  const [quantity, setQuantity] = useState(1)
+
   if (loading) return <p>Loading...</p>
   if (error) return `Error -> ${error}`
 
@@ -57,9 +57,26 @@ const ProductData = () => {
             <span>.{splitInt(data.product.price).splice(-2).join('')}</span>
           </p>
           <div className='product__quantity'>
-            <button>-</button>
-            <p>{quantity}</p>
-            <button>+</button>
+            {quantityCount <= 1 ? (
+              <button className='quantity-button--disabled'>-</button>
+            ) : (
+              <button
+                className='quantity-button'
+                onClick={() => {
+                  setQuantityCount(quantityCount - 1)
+                }}
+              >
+                -
+              </button>
+            )}
+            <p>{quantityCount}</p>
+            <button
+              onClick={() => {
+                setQuantityCount(quantityCount + 1)
+              }}
+            >
+              +
+            </button>
           </div>
           <button className='product__cart-button'>Add to cart</button>
         </div>
