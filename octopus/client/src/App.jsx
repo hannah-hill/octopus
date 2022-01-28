@@ -10,10 +10,13 @@ const client = new ApolloClient({
 })
 
 const App = () => {
-  const [basket, setBasket] = useState()
+  const [basket, setBasket] = useState([])
   const [quantityCount, setQuantityCount] = useState(1)
 
-  const addToBasket = (productId, quantity) => {}
+  const addToBasket = (productId) => {
+    setBasket([...basket, { productId: productId, quantity: quantityCount }])
+    setQuantityCount(1)
+  }
 
   return (
     <ApolloProvider client={client}>
@@ -22,6 +25,7 @@ const App = () => {
         <ProductData
           quantityCount={quantityCount}
           setQuantityCount={setQuantityCount}
+          addToBasket={addToBasket}
         />
         <Footer />
       </>
