@@ -49,6 +49,7 @@ const ProductData = ({ quantityCount, setQuantityCount, addToBasket }) => {
             quantityCount={quantityCount}
             setQuantityCount={setQuantityCount}
             addToBasket={addToBasket}
+            id={productId}
           />
           <ProductDescription description={data.product.description} />
           <ProductSpec

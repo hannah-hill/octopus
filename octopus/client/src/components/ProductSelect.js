@@ -5,6 +5,7 @@ const ProductSelect = ({
   quantityCount,
   setQuantityCount,
   addToBasket,
+  id,
 }) => {
   const splitInt = (price) => {
     return [...(price + '')].map(Number)
@@ -57,7 +58,7 @@ const ProductSelect = ({
           +
         </button>
       </div>
-      <button className='product__cart-button' onClick={addToBasket}>
+      <button className='product__cart-button' onClick={() => addToBasket(id)}>
         Add to cart
       </button>
     </div>
