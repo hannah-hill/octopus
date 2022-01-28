@@ -1,0 +1,15 @@
+.header__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+
+  .header__logo-img {
+    height: 25px;
+  }
+
+  .header__basket-img {
+    height: 20px;
+  }
+}

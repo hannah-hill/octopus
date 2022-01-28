@@ -2,9 +2,11 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 
+const productId = 1
+
 const QUERY_PRODUCTS = gql`
   query {
-    product(productId: 1) {
+    product(productId: ${productId}) {
       name
       power
       description
@@ -22,9 +24,10 @@ const QUERY_PRODUCTS = gql`
   }
 `
 
-export function ProductData() {
-  const { data, loading } = useQuery(QUERY_PRODUCTS)
+const ProductData = () => {
+  const { data, loading, error } = useQuery(QUERY_PRODUCTS)
   if (loading) return <p>Loading...</p>
+  if (error) return `Error -> ${error}`
 
   return (
     <>
@@ -33,3 +36,5 @@ export function ProductData() {
     </>
   )
 }
+
+export default ProductData

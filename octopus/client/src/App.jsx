@@ -1,5 +1,7 @@
 import React from 'react'
-import { ProductData } from './Products'
+import ProductData from './components/ProductData'
+import Header from './components/Header'
+import Footer from './components/Footer'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 
@@ -11,8 +13,9 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <>
-        <h1>Hello World</h1>
+        <Header />
         <ProductData />
+        <Footer />
       </>
     </ApolloProvider>
   )
