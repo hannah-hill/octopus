@@ -6,7 +6,6 @@ import ProductSelect from '../components/ProductSelect'
 
 test('should be able to add items to the basket', async () => {
   render(<ProductSelect />)
-
   const button = screen.getByText('Add to cart')
 })
 

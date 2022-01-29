@@ -1,35 +1,17 @@
 import React from 'react'
 import ProductSelect from './ProductSelect'
 import { useQuery } from '@apollo/react-hooks'
-import { gql } from 'apollo-boost'
 import ProductHero from './ProductHero'
 import ProductDescription from './ProductDescription'
 import ProductSpec from './ProductSpec'
+import { QUERY_PRODUCTS } from '../helpers/api'
 
 const productId = 1
 
-const QUERY_PRODUCTS = gql`
-  query {
-    product(productId: ${productId}) {
-      name
-      power
-      description
-      price
-      quantity
-      brand
-      weight
-      height
-      width
-      length
-      modelCode
-      colour
-      imgUrl
-    }
-  }
-`
-
 const ProductData = ({ addToBasket }) => {
-  const { data, loading, error } = useQuery(QUERY_PRODUCTS)
+  const { data, loading, error } = useQuery(QUERY_PRODUCTS, {
+    variables: { productId },
+  })
 
   if (loading) return <p>Loading...</p>
   if (error) return `Error -> ${error}`

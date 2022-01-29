@@ -2,7 +2,17 @@ import React from 'react'
 
 const Basket = ({ products }) => {
   return (
-    <>{products && products.map((product) => <h1>{product.quantity}</h1>)}</>
+    <>
+      <div>
+        {products &&
+          products.map((product) => (
+            <div>
+              <p>{product.name}</p>
+              <p>{product.quantity}</p>
+            </div>
+          ))}
+      </div>
+    </>
   )
 }
 
