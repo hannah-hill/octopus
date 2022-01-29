@@ -1,10 +1,8 @@
 import React from 'react'
 
-const Basket = ({ basket }) => {
+const Basket = ({ products }) => {
   return (
-    <>
-      <div></div>
-    </>
+    <>{products && products.map((product) => <h1>{product.quantity}</h1>)}</>
   )
 }
 

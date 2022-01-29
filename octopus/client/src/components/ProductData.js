@@ -28,7 +28,7 @@ const QUERY_PRODUCTS = gql`
   }
 `
 
-const ProductData = ({ quantityCount, setQuantityCount, addToBasket }) => {
+const ProductData = ({ addToBasket }) => {
   const { data, loading, error } = useQuery(QUERY_PRODUCTS)
 
   if (loading) return <p>Loading...</p>
@@ -44,13 +44,7 @@ const ProductData = ({ quantityCount, setQuantityCount, addToBasket }) => {
             power={data.product.power}
             quantity={data.product.quantity}
           />
-          <ProductSelect
-            data={data}
-            quantityCount={quantityCount}
-            setQuantityCount={setQuantityCount}
-            addToBasket={addToBasket}
-            id={productId}
-          />
+          <ProductSelect data={data} addToBasket={addToBasket} id={productId} />
           <ProductDescription description={data.product.description} />
           <ProductSpec
             brand={data.product.brand}

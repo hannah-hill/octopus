@@ -11,34 +11,35 @@ const client = new ApolloClient({
 
 const App = () => {
   const [basket, setBasket] = useState([])
-  const [quantityCount, setQuantityCount] = useState(1)
 
-  const addToBasket = (productId) => {
-    const existingProduct = basket.find(
-      (product) => product.productId === productId
-    )
-    existingProduct &&
-      setBasket(
-        basket.map((product) =>
-          product.productId === productId
-            ? { ...product, quantity: product.quantity + quantityCount }
-            : product
-        )
-      )
-    setBasket([...basket, { productId: productId, quantity: quantityCount }])
-    setQuantityCount(1)
+  const addToBasket = (id, qty) => {
+    setBasket([...basket, { productId: id, quantity: qty }])
   }
+
+  // const addToBasket = (id, qty) => {
+  //   const existingProduct = basket.find((product) => product.productId === id)
+  //   console.log(existingProduct)
+  //   if (existingProduct) {
+  //     console.log('found one')
+  //     setBasket(
+  //       basket.map((product) =>
+  //         product.productId === id
+  //           ? { ...product, quantity: product.quantity + quantityCount }
+  //           : product
+  //       )
+  //     )
+  //   } else {
+  //     setBasket([...basket, { productId: id, quantity: quantityCount }])
+  //   }
+  //   setQuantityCount(1)
+  // }
   console.log(basket)
 
   return (
     <ApolloProvider client={client}>
       <>
         <Header basket={basket} />
-        <ProductData
-          quantityCount={quantityCount}
-          setQuantityCount={setQuantityCount}
-          addToBasket={addToBasket}
-        />
+        <ProductData addToBasket={addToBasket} />
         <Footer />
       </>
     </ApolloProvider>

@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const ProductSelect = ({
-  data,
-  quantityCount,
-  setQuantityCount,
-  addToBasket,
-  id,
-}) => {
+const ProductSelect = ({ data, addToBasket, id }) => {
+  const [qty, setQty] = useState(1)
+
+  const onClick = (event) => {
+    event.preventDefault()
+    addToBasket(id, qty)
+    setQty(1)
+  }
+
   const splitInt = (price) => {
     return [...(price + '')].map(Number)
   }
+
   return (
     <div className='ProductSelect'>
       <>
@@ -21,7 +24,7 @@ const ProductSelect = ({
         )}
       </>
       <div className='ProductSelect__quantity-container'>
-        {quantityCount <= 1 ? (
+        {qty <= 1 ? (
           <button name='disabled-button' className='quantity-button--disabled'>
             -
           </button>
@@ -31,7 +34,7 @@ const ProductSelect = ({
             data-testid='decrease'
             className='quantity-button'
             onClick={() => {
-              setQuantityCount(quantityCount - 1)
+              setQty(qty - 1)
             }}
           >
             -
@@ -41,7 +44,7 @@ const ProductSelect = ({
           Quantity Count
           <input
             id='quantity-count'
-            value={quantityCount}
+            value={qty}
             type='number'
             data-testid='quantity-count'
             readOnly
@@ -52,13 +55,13 @@ const ProductSelect = ({
           name='increase'
           data-testid='increase'
           onClick={() => {
-            setQuantityCount(quantityCount + 1)
+            setQty(qty + 1)
           }}
         >
           +
         </button>
       </div>
-      <button className='product__cart-button' onClick={() => addToBasket(id)}>
+      <button className='product__cart-button' onClick={onClick}>
         Add to cart
       </button>
     </div>
