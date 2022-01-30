@@ -13,4 +13,45 @@
   .header__basket-img {
     height: 22px;
   }
+
+  .header-basket {
+    position: relative;
+  }
+}
+
+.Basket {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 2;
+  width: 40vw;
+  background-color: $lightblue;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  text-align: center;
+
+  .Basket__product {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .Basket__empty {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  button {
+    height: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: white;
+    background: linear-gradient($lightpink 50%, $pink 50%);
+    border: none;
+    border-radius: 0.2rem;
+  }
+  img {
+    height: 50px;
+  }
 }

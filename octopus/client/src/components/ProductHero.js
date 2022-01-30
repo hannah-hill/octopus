@@ -33,6 +33,8 @@ const ProductHero = ({
             price={price}
             addToBasket={addToBasket}
             id={productId}
+            name={name}
+            img={img}
           />
         </div>
       </div>

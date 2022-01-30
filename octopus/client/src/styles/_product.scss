@@ -78,8 +78,21 @@
 
 .ProductSelect__quantity {
   display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
+
+  label {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: $opaque;
+  }
+  .ProductSelect__input {
+    width: 100%;
+  }
 
   .quantity-button {
     width: 30px;
@@ -122,14 +135,6 @@
 
   input[type='number'] {
     -moz-appearance: textfield;
-  }
-
-  label {
-    position: absolute;
-    top: 618px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: $opaque;
   }
 }
 
@@ -251,6 +256,11 @@ h2 {
     padding-top: 0;
   }
 
+  .ProductSpec {
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
   .ProductSpec__table {
     tr {
       border-bottom: 1px solid $darkblue;

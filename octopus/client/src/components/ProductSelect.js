@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-const ProductSelect = ({ price, addToBasket, id }) => {
+const ProductSelect = ({ price, addToBasket, id, name, img }) => {
   const [qty, setQty] = useState(1)
 
   const onSubmit = (event) => {
     event.preventDefault()
-    addToBasket(id, qty)
+    addToBasket(id, name, img, qty)
     setQty(1)
   }
 
@@ -26,39 +26,41 @@ const ProductSelect = ({ price, addToBasket, id }) => {
             )}
           </>
           <div className='ProductSelect__quantity'>
-            {qty <= 1 ? (
-              <button
-                name='disabled-button'
-                className='quantity-button--disabled'
-              >
-                -
-              </button>
-            ) : (
+            <label for='quantity-count'>QTY</label>
+            <div className='ProductSelect__input'>
+              {qty <= 1 ? (
+                <button
+                  name='disabled-button'
+                  className='quantity-button--disabled'
+                >
+                  -
+                </button>
+              ) : (
+                <button
+                  type='button'
+                  name='decrease'
+                  data-testid='decrease'
+                  className='quantity-button'
+                  onClick={() => {
+                    setQty(qty - 1)
+                  }}
+                >
+                  -
+                </button>
+              )}
+
+              <input id='quantity-count' value={qty} type='number' readOnly />
               <button
                 type='button'
-                name='decrease'
-                data-testid='decrease'
                 className='quantity-button'
+                name='increase'
                 onClick={() => {
-                  setQty(qty - 1)
+                  setQty(qty + 1)
                 }}
               >
-                -
+                +
               </button>
-            )}
-            <div></div>
-            <label>QTY</label>
-            <input id='quantity-count' value={qty} type='number' readOnly />
-            <button
-              type='button'
-              className='quantity-button'
-              name='increase'
-              onClick={() => {
-                setQty(qty + 1)
-              }}
-            >
-              +
-            </button>
+            </div>
           </div>
         </div>
         <div className='ProductSelect__button'>
