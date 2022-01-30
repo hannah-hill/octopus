@@ -25,18 +25,22 @@ const ProductData = ({ addToBasket }) => {
             name={data.product.name}
             power={data.product.power}
             quantity={data.product.quantity}
+            price={data.product.price}
+            addToBasket={addToBasket}
+            id={productId}
           />
-          <ProductSelect data={data} addToBasket={addToBasket} id={productId} />
-          <ProductDescription description={data.product.description} />
-          <ProductSpec
-            brand={data.product.brand}
-            weight={data.product.weight}
-            height={data.product.height}
-            width={data.product.width}
-            length={data.product.length}
-            modelCode={data.product.modelCode}
-            colour={data.product.colour}
-          />
+          <div className='ProductData__bottom--desktop'>
+            <ProductDescription description={data.product.description} />
+            <ProductSpec
+              brand={data.product.brand}
+              weight={data.product.weight}
+              height={data.product.height}
+              width={data.product.width}
+              length={data.product.length}
+              modelCode={data.product.modelCode}
+              colour={data.product.colour}
+            />
+          </div>
         </div>
       </main>
     </>

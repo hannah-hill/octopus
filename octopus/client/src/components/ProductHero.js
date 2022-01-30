@@ -1,21 +1,39 @@
 import React from 'react'
+import ProductSelect from './ProductSelect'
 
-const ProductHero = ({ img, name, power, quantity }) => {
+const ProductHero = ({
+  img,
+  name,
+  power,
+  quantity,
+  price,
+  productId,
+  addToBasket,
+}) => {
   return (
     <>
-      <div className='product__img'>
-        <img
-          src={img}
-          alt='An energy saving lightbulb'
-          className='product__img-img'
-        />
-      </div>
-      <div className='product__headers'>
-        <div>
-          <h1 className='product__h1'>{name}</h1>
-          <p className='product__subheader'>
-            {power} <span>//</span> Packet of {quantity}
-          </p>
+      <div className='ProductHero'>
+        <div className='product__img'>
+          <img
+            src={img}
+            alt='An energy saving lightbulb'
+            className='product__img-img'
+          />
+        </div>
+        <div className='ProductData__top--desktop'>
+          <div className='product__headers'>
+            <div>
+              <h1 className='product__h1'>{name}</h1>
+              <p className='product__subheader'>
+                {power} <span>//</span> Packet of {quantity}
+              </p>
+            </div>
+          </div>
+          <ProductSelect
+            price={price}
+            addToBasket={addToBasket}
+            id={productId}
+          />
         </div>
       </div>
     </>
