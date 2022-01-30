@@ -6,14 +6,13 @@ import Basket from '../components/Basket'
 const Header = ({ basket }) => {
   const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false)
   const handleShow = () => (!show ? setShow(true) : setShow(false))
 
   return (
     <header className='header'>
       <div className='header__container'>
         <div className='header__logo'>
-          <a className='header__logo-link'>
+          <a className='header__logo-link' href='https://octopus.energy/'>
             <img
               src={LogoSvg}
               className='header__logo-img'
@@ -22,9 +21,9 @@ const Header = ({ basket }) => {
           </a>
         </div>
         <div className='header__basket'>
-          <a className='header__basket-link' onClick={handleShow}>
+          <button className='header__basket-link' onClick={handleShow}>
             <img src={BasketSvg} className='header__basket-img' alt='Basket' />
-          </a>
+          </button>
           {show && <Basket products={basket} />}
         </div>
       </div>

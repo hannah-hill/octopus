@@ -17,6 +17,15 @@
   .header-basket {
     position: relative;
   }
+
+  .header__basket-link {
+    background: none;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .Basket {

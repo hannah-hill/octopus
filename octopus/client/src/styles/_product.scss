@@ -103,6 +103,10 @@
     background-color: $opaque;
     border: none;
     border-radius: 0.2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .quantity-button--disabled {
@@ -114,6 +118,10 @@
     background-color: $disabled;
     border: none;
     border-radius: 0.2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   input {

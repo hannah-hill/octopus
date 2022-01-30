@@ -12,10 +12,10 @@ const client = new ApolloClient({
 const App = () => {
   const [basket, setBasket] = useState([])
 
-  const addToBasket = (id, name, img, qty) => {
+  const addToBasket = (productId, name, img, qty) => {
     setBasket([
       ...basket,
-      { productId: id, name: name, img: img, quantity: qty },
+      { productId: productId, name: name, img: img, quantity: qty },
     ])
   }
 
