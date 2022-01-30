@@ -11,10 +11,12 @@ const ProductHero = ({ img, name, power, quantity }) => {
         />
       </div>
       <div className='product__headers'>
-        <h1 className='product__h1'>{name}</h1>
-        <p className='product__subheader'>
-          {power} // Packet of {quantity}
-        </p>
+        <div>
+          <h1 className='product__h1'>{name}</h1>
+          <p className='product__subheader'>
+            {power} <span>//</span> Packet of {quantity}
+          </p>
+        </div>
       </div>
     </>
   )

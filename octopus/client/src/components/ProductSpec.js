@@ -12,16 +12,18 @@ const ProductSpec = ({
 }) => {
   return (
     <div className='ProductSpec'>
-      <h2 className='h2'>Specifications</h2>
-      <SpecTable
-        brand={brand}
-        weight={weight}
-        height={height}
-        width={width}
-        length={length}
-        modelCode={modelCode}
-        colour={colour}
-      />
+      <div className='ProductSpec__container'>
+        <h2 className='h2'>Specifications</h2>
+        <SpecTable
+          brand={brand}
+          weight={weight}
+          height={height}
+          width={width}
+          length={length}
+          modelCode={modelCode}
+          colour={colour}
+        />
+      </div>
     </div>
   )
 }

@@ -14,25 +14,25 @@ const SpecTable = ({
       <table>
         <tbody>
           <tr>
-            <td>Brand</td>
+            <td className='td-1'>Brand</td>
             <td>{brand}</td>
           </tr>
           <tr>
-            <td>Item weight</td>
+            <td className='td-1'>Item weight</td>
             <td>{weight}</td>
           </tr>
           <tr>
-            <td>Dimensions</td>
+            <td className='td-1'>Dimensions</td>
             <td>
               {height}x{width}x{length}
             </td>
           </tr>
           <tr>
-            <td>Item model number</td>
+            <td className='td-1'>Item model number</td>
             <td>{modelCode}</td>
           </tr>
           <tr>
-            <td>Colour</td>
+            <td className='td-1'>Colour</td>
             <td>{colour}</td>
           </tr>
         </tbody>
