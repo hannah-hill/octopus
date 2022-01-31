@@ -67,6 +67,8 @@ I also would have liked to spend more time on styling. I'm happy with the outcom
 - Jest
 - Insomnia
 
+#### Brief
+
 This example project was pinched from a
 [graphene-django example app](https://github.com/graphql-python/graphene-django/tree/master/server/app).
 and [Create React App](https://create-react-app.dev/docs/getting-started/).  

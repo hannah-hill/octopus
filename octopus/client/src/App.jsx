@@ -19,25 +19,6 @@ const App = () => {
     ])
   }
 
-  // const addToBasket = (id, qty) => {
-  //   const existingProduct = basket.find((product) => product.productId === id)
-  //   console.log(existingProduct)
-  //   if (existingProduct) {
-  //     console.log('found one')
-  //     setBasket(
-  //       basket.map((product) =>
-  //         product.productId === id
-  //           ? { ...product, quantity: product.quantity + quantityCount }
-  //           : product
-  //       )
-  //     )
-  //   } else {
-  //     setBasket([...basket, { productId: id, quantity: quantityCount }])
-  //   }
-  //   setQuantityCount(1)
-  // }
-  console.log(basket)
-
   return (
     <ApolloProvider client={client}>
       <>

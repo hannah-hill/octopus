@@ -7,7 +7,7 @@ const ProductHero = ({
   power,
   quantity,
   price,
-  productId,
+  id,
   addToBasket,
 }) => {
   return (
@@ -32,7 +32,7 @@ const ProductHero = ({
           <ProductSelect
             price={price}
             addToBasket={addToBasket}
-            id={productId}
+            id={id}
             name={name}
             img={img}
           />

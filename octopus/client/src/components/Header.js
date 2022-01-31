@@ -21,7 +21,11 @@ const Header = ({ basket }) => {
           </a>
         </div>
         <div className='header__basket'>
-          <button className='header__basket-link' onClick={handleShow}>
+          <button
+            className='header__basket-link'
+            onClick={handleShow}
+            data-testid='basket-button'
+          >
             <img src={BasketSvg} className='header__basket-img' alt='Basket' />
           </button>
           {show && <Basket products={basket} />}

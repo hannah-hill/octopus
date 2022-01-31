@@ -26,7 +26,7 @@ const ProductSelect = ({ price, addToBasket, id, name, img }) => {
             )}
           </>
           <div className='ProductSelect__quantity'>
-            <label for='quantity-count'>QTY</label>
+            <label htmlFor='quantity-count'>QTY</label>
             <div className='ProductSelect__input'>
               {qty <= 1 ? (
                 <button
