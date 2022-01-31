@@ -5,7 +5,7 @@
 ### Back end
 
 1. Clone this repo
-2. In terminal, cd into octopus/server
+2. In terminal, `cd octopus/server`
 3. Start a virtual environment
 
 ```
@@ -55,7 +55,7 @@ If I had more time, I would have liked to work on transitions when there is user
 
 I also would have liked to spend more time on styling. I'm happy with the outcome compared to the provided design, but the reponsive design and accessibility could be improved.
 
-Finally, I would have preferred to try taking a TDD approach to building the app, where I tested each aspect of the app's fucntionality before moving on to the next.
+Finally, I would have preferred to try taking a TDD approach to building the app, where I tested each aspect of the app's functionality before moving on to the next.
 
 ## Technologies Used
 
